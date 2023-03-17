@@ -6,14 +6,14 @@ import { useDispatch } from 'react-redux'
 
 import { Typography, Button, ButtonGroup, TextField, FilledInput } from '@mui/material';
 import { Create, Delete, CheckCircle, Height} from "@mui/icons-material"
-import { makeStyles } from '@mui/styles';
+//import { makeStyles } from '@mui/styles';
 
 import {publicConstants} from "../PublicConstants"
 import { updateToDo, checkToDo, deleteToDo } from '../../store/actions/todoActions';
 
 const {theme} = publicConstants;
 
-const useStyles = makeStyles({
+/*const useStyles = makeStyles({
     todoStyle:{
         margin: "20px auto",
         padding: "20px",
@@ -31,10 +31,10 @@ const useStyles = makeStyles({
     divWidth: {
         width: "60%",
     }
-})
+})*/
 
 const ToDo = ({ toDo }) => {
-    const classes = useStyles();
+    //const classes = useStyles();
 
     const dispatch = useDispatch();
 
@@ -90,13 +90,15 @@ const ToDo = ({ toDo }) => {
 
     return ( 
         <>
-        <div className = {classes.todoStyle}>
-            <div className= {classes.divWidth}>
+        <div //className = {classes.todoStyle}
+        >
+            <div //className= {classes.divWidth}
+            >
                 <TextField
                 id= {toDo._id}
                 multiline
                 fullWidth
-                className={ toDo.isComplete ? classes.checkedToDo : ""}     
+                //className={ toDo.isComplete ? classes.checkedToDo : ""}     
                 variant="standard"
                 theme ={theme}
                 value = {input}  
@@ -107,10 +109,14 @@ const ToDo = ({ toDo }) => {
                   onChange={inputAction}
                   onKeyDown = {keyPressAction}
                 />
-                <Typography className = {classes.grayStyle} variant = "subtitle1">
+                <Typography 
+                //className = {classes.grayStyle} 
+                variant = "subtitle1">
                     author: Mushun
                 </Typography>
-                <Typography className = {classes.grayStyle} variant = "subtitle1">
+                <Typography 
+                //className = {classes.grayStyle} 
+                variant = "subtitle1">
                     Added: {moment(toDo.date).fromNow()}
                 </Typography>
             </div>

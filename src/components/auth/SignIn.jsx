@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 
 import { Typography, TextField, Button} from "@mui/material"
-import { makeStyles } from '@mui/styles';
+//import { makeStyles } from '@mui/styles';
 
 import {publicConstants} from "../PublicConstants"
 import { signIn } from '../../store/actions/authActions';
 
 const {theme} = publicConstants;
 
+/*
 const useStyles= makeStyles({
     formStyle: {
         margin: "0px auto",
@@ -23,10 +24,10 @@ const useStyles= makeStyles({
         }
     }
 
-})
+})*/
 
 const SignIn = () => {
-    const classes = useStyles();
+//    const classes = useStyles();
     const dispatch = useDispatch();
     const auth = useSelector(state => state.auth);
 
@@ -48,7 +49,7 @@ if(auth._id) return <Navigate to="/"/>
     return ( 
         <>
         <form
-        className = { classes.formStyle }
+        //className = { classes.formStyle }
         noValidate
         autoComplete='off'
         onSubmit={handleSubmit}
@@ -57,7 +58,7 @@ if(auth._id) return <Navigate to="/"/>
                 Welcome
             </Typography>
             <TextField
-                className = { classes.spacing } 
+                //className = { classes.spacing } 
                 id= "enter-email"
                 label= "Enter e-mail"
                 variant= "outlined"
@@ -66,7 +67,7 @@ if(auth._id) return <Navigate to="/"/>
                 onChange = {(e) => setCreds({...creds, email: e.target.value})}
             />
             <TextField 
-                className = { classes.spacing } 
+                //className = { classes.spacing } 
                 type= "password"
                 id= "enter-password"
                 label= "Enter password"
@@ -76,7 +77,7 @@ if(auth._id) return <Navigate to="/"/>
                 onChange = {(e) => setCreds({...creds, password: e.target.value})}
             />
             <Button
-                className = { classes.spacing } 
+                //className = { classes.spacing } 
                 theme={theme}
                 variant="contained"
                 color="primary"

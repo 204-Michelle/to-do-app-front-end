@@ -4,14 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 
 import { Typography, TextField, Button} from "@mui/material"
-import { makeStyles } from '@mui/styles';
+//import { makeStyles } from '@mui/styles';
 
 import {publicConstants} from "../PublicConstants"
 import { signUp } from '../../store/actions/authActions';
 
 const {theme} = publicConstants;
 
-const useStyles= makeStyles({
+/*const useStyles= makeStyles({
     formStyle: {
         margin: "0px auto",
         padding: "30px",
@@ -24,10 +24,10 @@ const useStyles= makeStyles({
         }
     }
 
-})
+})*/
 
 const SignUp = () => {
-    const classes = useStyles();
+//    const classes = useStyles();
     const dispatch = useDispatch();
     const auth = useSelector(state => state.auth);
 
@@ -51,7 +51,7 @@ const SignUp = () => {
     return ( 
         <>
         <form
-        className = { classes.formStyle }
+  //      className = { classes.formStyle }
         noValidate
         autoComplete='off'
         onSubmit = {handleSubmit}
@@ -60,7 +60,7 @@ const SignUp = () => {
                 Join us
             </Typography>
             <TextField
-                className = { classes.spacing } 
+                //className = { classes.spacing } 
                 id= "enter-name"
                 label= "Enter name"
                 variant= "outlined"
@@ -69,7 +69,7 @@ const SignUp = () => {
                 onChange = {(e) => setUser({...user, name: e.target.value})}
             />
             <TextField
-                className = { classes.spacing } 
+                //className = { classes.spacing } 
                 id= "enter-email"
                 label= "Enter e-mail"
                 variant= "outlined"
@@ -78,7 +78,7 @@ const SignUp = () => {
                 onChange = {(e) => setUser({...user, email: e.target.value})}
             />
             <TextField 
-                className = { classes.spacing } 
+                //className = { classes.spacing } 
                 id= "enter-password"
                 type="password"
                 label= "Enter password"
@@ -88,7 +88,7 @@ const SignUp = () => {
                 onChange = {(e) => setUser({...user, password: e.target.value})}
             />
             <Button
-                className = { classes.spacing } 
+                //className = { classes.spacing } 
                 theme={theme}
                 variant="contained"
                 color="primary"
