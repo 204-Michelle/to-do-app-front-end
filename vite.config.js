@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: [
-        '@mui/material'
+        '/node_modules/@mui/material/index'
       ]
     }
   }
