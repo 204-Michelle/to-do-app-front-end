@@ -32,7 +32,7 @@ const SignIn = () => {
   return (
     <>
       <form
-        className="form-style"
+        className="auth-form-style"
         noValidate
         autoComplete="off"
         onSubmit={handleSubmit}
