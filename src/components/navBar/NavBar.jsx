@@ -1,6 +1,6 @@
 import React from "react";
 import { AppBar, Typography, Toolbar, Button } from "@mui/material";
-//import { makeStyles } from "@mui/styles";
+import "../../styles/NavBar.css";
 
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,18 +8,8 @@ import { publicConstants } from "../PublicConstants";
 import { signOut } from "../../store/actions/authActions";
 
 const { theme } = publicConstants;
-/*const useStyles = makeStyles({
-  root: {
-    flexGrow: 1,
-  },
-  linkStyle: {
-    color: "#fafafa",
-    textDecoration: "none",
-  },
-});*/
 
 const NavBar = () => {
-//  const classes = useStyles();
   const navigate = useNavigate();
   const auth = useSelector((state) => state.auth);
   console.log(auth);
@@ -33,16 +23,14 @@ const NavBar = () => {
     <>
       <AppBar position="static" theme={theme}>
         <Toolbar>
-          <Typography variant="h4" /*className={classes.root}*/>
-            <Link 
-            //className={classes.linkStyle} 
-            to="/">
+          <Typography variant="h4" className="root">
+            <Link className="link-style" to="/">
               To do app
             </Link>
           </Typography>
           {auth._id ? (
             <>
-              <Typography variant="subtitle2" /*className={classes.root}*/>
+              <Typography variant="subtitle2" className="root">
                 logged in as {auth.name}
               </Typography>
               <Button color="inherit" onClick={() => handleSignOut()}>
@@ -52,12 +40,12 @@ const NavBar = () => {
           ) : (
             <>
               <Button color="inherit">
-                <Link /*className={classes.linkStyle}*/ to="/signin">
+                <Link className="link-style" to="/signin">
                   Sign in
                 </Link>
               </Button>
               <Button color="inherit">
-                <Link /*className={classes.linkStyle}*/ to="/signup">
+                <Link className="link-style" to="/signup">
                   Sign up
                 </Link>
               </Button>

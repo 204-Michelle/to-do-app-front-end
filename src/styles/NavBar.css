@@ -1,0 +1,8 @@
+.root{
+    flex-grow: 1;
+}
+
+.link-style{
+    color: #fafafa;
+    text-decoration: none;
+}
