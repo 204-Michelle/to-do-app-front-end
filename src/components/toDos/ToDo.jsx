@@ -78,7 +78,7 @@ const ToDo = ({ toDo }) => {
             id={toDo._id}
             multiline
             fullWidth
-            className={toDo.isComplete ? "check-to-do" : ""}
+            className={toDo.isComplete ? "checked-to-do" : ""}
             variant="standard"
             theme={theme}
             value={input}
